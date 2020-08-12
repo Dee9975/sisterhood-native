@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "531850143373",
+    "firebase_url": "https://sisterhood-9f838.firebaseio.com",
+    "project_id": "sisterhood-9f838",
+    "storage_bucket": "sisterhood-9f838.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531850143373:android:1dd5d03f293f692fe864c4",
+        "android_client_info": {
+          "package_name": "com.sisterhood.sisterhood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531850143373-6r2ldf1790p6nalf4tjhl3hjjv9paeh0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sisterhood.sisterhood",
+            "certificate_hash": "e0f53fe6fddbcffaaf16703b04e63c26ae86337f"
+          }
+        },
+        {
+          "client_id": "531850143373-tt6uos7v5n43lj9pvfjsoecp200uedvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvoLSP61SOMoFPW-LttDx6nhMVWr-Gwy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531850143373-tt6uos7v5n43lj9pvfjsoecp200uedvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
