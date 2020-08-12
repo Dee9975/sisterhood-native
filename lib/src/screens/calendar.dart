@@ -6,6 +6,7 @@ import 'package:sisterhood/src/models/animations.dart';
 import 'package:sisterhood/src/widgets/calendar/calendar_item.dart';
 import 'package:sisterhood/style.dart';
 import 'package:supercharged/supercharged.dart';
+import 'package:intl/intl.dart';
 
 class Calendar extends StatefulWidget {
   Calendar({Key key}) : super(key: key);
@@ -46,17 +47,14 @@ class _CalendarState extends State<Calendar> {
                       return NotificationListener<ScrollNotification>(
                         onNotification: (notification) {
                           if (notification is ScrollStartNotification) {
-                            print(notification.dragDetails.localPosition?? 0);
                             Provider.of<Animations>(context, listen: false).isScrolling = true;
                           } else if (notification is ScrollEndNotification) {
                             Provider.of<Animations>(context, listen: false).isScrolling = false;
-                          } else if (notification is ScrollUpdateNotification) {
-//                            Provider.of<Animations>(context, listen: false).padding = 16.0;
                           }
                           return true;
                         },
                         child: CustomScrollView(
-                          physics: ClampingScrollPhysics(),
+                          physics: RangeMaintainingScrollPhysics(),
                           slivers: [
                             TopBar(),
                             SliverList(
@@ -66,9 +64,10 @@ class _CalendarState extends State<Calendar> {
                                   curve: Curves.bounceInOut,
                                   padding: EdgeInsets.only(top: Provider.of<Animations>(context).padding, left: 16.0, right: 16.0),
                                   child: CalendarItem(
+                                    firstItem: index == 0,
                                     title: data[index].title,
                                     subTitle: data[index].subtitle,
-                                    date: data[index].date.toDate().toString(),
+                                    date: DateFormat.MMMMd().format(data[index].date.toDate()),
                                     color: data[index].color.toColor(),
                                   ),
                                 );
