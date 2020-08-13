@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sisterhood/src/models/Date.dart';
 import 'package:sisterhood/src/models/animations.dart';
+import 'package:sisterhood/src/screens/person_details.dart';
 import 'package:sisterhood/src/widgets/calendar/calendar_item.dart';
 import 'package:sisterhood/style.dart';
 import 'package:supercharged/supercharged.dart';
@@ -63,12 +64,21 @@ class _CalendarState extends State<Calendar> {
                                   duration: 0.3.seconds,
                                   curve: Curves.bounceInOut,
                                   padding: EdgeInsets.only(top: Provider.of<Animations>(context).padding, left: 16.0, right: 16.0),
-                                  child: CalendarItem(
-                                    firstItem: index == 0,
-                                    title: data[index].title,
-                                    subTitle: data[index].subtitle,
-                                    date: DateFormat.MMMMd().format(data[index].date.toDate()),
-                                    color: data[index].color.toColor(),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) {
+                                          return PersonDetails(data: data[index]);
+                                        }
+                                      ));
+                                    },
+                                    child: CalendarItem(
+                                      firstItem: index == 0,
+                                      title: data[index].title,
+                                      subTitle: data[index].subtitle,
+                                      date: DateFormat.MMMMd().format(data[index].date.toDate()),
+                                      color: data[index].color.toColor(),
+                                    ),
                                   ),
                                 );
                               }, childCount: data.length),
