@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const LargeTextSize = 39.0;
 const CalendarTodayPersonSize = 24.0;
-const MediumTextSize = 16.0;
+const MediumTextSize = 18.0;
 const BodyTextSize = 12.0;
 const SettingsTitleSize = 14.0;
 

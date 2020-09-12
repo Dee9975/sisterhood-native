@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class Animations extends ChangeNotifier {
   bool _isScrolling;
   double _padding;
-  Animations(this._isScrolling, [this._padding = 8.0]);
+  Animations(this._isScrolling, [this._padding = 16.0]);
 
   get isScrolling => _isScrolling;
   get padding => _padding;
@@ -17,7 +17,7 @@ class Animations extends ChangeNotifier {
     _isScrolling = scrollStatus;
     notifyListeners();
     if (!_isScrolling) {
-      _padding = 8.0;
+      _padding = 16.0;
     } else {
       _padding = 24.0;
     }
